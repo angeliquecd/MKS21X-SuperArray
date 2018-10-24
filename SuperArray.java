@@ -73,4 +73,24 @@ public class SuperArray{
     }
     return -1;
   }
+  public int lastIndexOf(String target){
+    int last;
+    for (int i =size-1;i>-1;i-=1){
+      if (data[i].equals(target)) return i;
+    }
+    return -1;
+  }
+  public void add(int place, String element){
+    if (place < 0 || place > size()) System.out.println("Error");
+    size++;
+    String[] data1=new String[size];
+    for (int i=0;i<place;i++){
+      data1[i]=data[i];
+    }
+    for (int i = place;i<size-1;i++){
+      data1[i+1]=data[i];
+    }
+    data1[place]=element;
+    data=data1;
+  }
 }
