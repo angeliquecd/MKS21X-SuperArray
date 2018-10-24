@@ -48,4 +48,7 @@ public class SuperArray{
     data[index]=element;
     return old;
   }
+  private void resize(){
+    data1=String[size*2];
+  }
 }
