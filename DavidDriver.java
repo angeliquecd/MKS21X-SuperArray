@@ -89,8 +89,22 @@ public class DavidDriver{
 	for (int i=0;i<100;i++){
 		beef.add(""+i);}
 	System.out.println(beef);
-	System.out.println("Testing contains:")
+	System.out.println("Testing contains:");
 	System.out.println("Should print true: "+beef.contains("8"));
 System.out.println("Should print false: "+beef.contains("801"));
+beef.clear();
+beef.add("cow");
+beef.add("hey");
+beef.add("hello");
+beef.add("hello1");
+beef.add("cow");
+System.out.println("New beef list: " + beef);
+System.out.println("Should print 0: "+ beef.indexOf("cow"));
+System.out.println("Should print 4: "+ beef.lastIndexOf("cow"));
+System.out.println("Should print 2: "+ beef.lastIndexOf("hello"));
+System.out.println("Should print -1: "+ beef.lastIndexOf("yoyo"));
+System.out.println("Should print -1: "+ beef.indexOf("yoyoyoy"));
+beef.add(3,"mouth");
+System.out.println("Testing add(3,'mouth'): "+beef);
 	}
 }
