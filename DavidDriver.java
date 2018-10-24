@@ -1,4 +1,5 @@
 public class DavidDriver{
+
 	public static void main(String[] args){
 		SuperArray beef = new SuperArray();
 		/**phase 1 testing start*/
@@ -82,5 +83,14 @@ public class DavidDriver{
 		System.out.println("SuperArray should now be []");
 		System.out.println(beef);
 		/** phase 1 testing end*/
+	/*phase 2 testing start*/
+	beef.clear();
+	System.out.println("Testing resize function: should print 0-99");
+	for (int i=0;i<100;i++){
+		beef.add(""+i);}
+	System.out.println(beef);
+	System.out.println("Testing contains:")
+	System.out.println("Should print true: "+beef.contains("8"));
+System.out.println("Should print false: "+beef.contains("801"));
 	}
 }
