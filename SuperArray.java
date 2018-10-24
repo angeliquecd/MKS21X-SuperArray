@@ -80,17 +80,41 @@ public class SuperArray{
     }
     return -1;
   }
-  public void add(int place, String element){
-    if (place < 0 || place > size()) System.out.println("Error");
+  public void add(int index, String element){
+    if (index < 0 || index > size()) {System.out.println("Error");}
+    else{
     size++;
     String[] data1=new String[size];
-    for (int i=0;i<place;i++){
+    for (int i=0;i<index;i++){
       data1[i]=data[i];
     }
-    for (int i = place;i<size-1;i++){
+    for (int i = index;i<size-1;i++){
       data1[i+1]=data[i];
     }
-    data1[place]=element;
+    data1[index]=element;
     data=data1;
+  }
+  }
+  public String remove(int index){
+    if (index < 0 || index > size()) return "Error";
+    else{
+    String returny= data[index];
+    size-=1;
+    String[] data1=new String[size];
+    for (int i=0;i<index;i++){
+      data1[i]=data[i];
+    }
+    for (int i = index;i<size;i++){
+      data1[i]=data[i+1];
+    }
+    data=data1;
+    return returny;
+  }
+  }
+  public boolean remove(String element){
+    int index = this.indexOf(element);
+    if (index == -1) return false;
+    this.remove(index);
+    return true;
   }
 }
