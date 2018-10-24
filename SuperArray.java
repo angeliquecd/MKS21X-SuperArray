@@ -5,6 +5,10 @@ public class SuperArray{
     data= new String[10];
     size=0;
   }
+  public SuperArray(int x){
+    data= new String[x];
+    size=0;
+  }
   public void clear(){
     size=0;
   }
@@ -15,10 +19,10 @@ public class SuperArray{
     return size==0;
   }
   public boolean add(String element){
-    if (size>=10) return false;
-      else{ data[size]=element;
+    if (size>=data.length) resize();
+    data[size]=element;
     size+=1;
-    return size<11;}
+    return size<11;
   }
   public String toString(){
     String value="[";
@@ -49,6 +53,10 @@ public class SuperArray{
     return old;
   }
   private void resize(){
-    data1=String[size*2];
+    String[] data1= new String[size*2];
+    for (int i =0;i<size;i++){
+      data1[i]=data[i];
+    }
+    data=data1;
   }
 }
