@@ -2,7 +2,7 @@ public class SuperArray{
   private String[] data;
   private int size;
   public SuperArray(){
-    data= String[10];
+    data= new String[10];
     size=0;
   }
   public void clear(){
@@ -15,33 +15,37 @@ public class SuperArray{
     return size==0;
   }
   public boolean add(String element){
-    size++;
-    data[size]=element;
-    return size<11;
+    if (size>=10) return false;
+      else{ data[size]=element;
+    size+=1;
+    return size<11;}
   }
   public String toString(){
     String value="[";
     for (int i = 0;i<size;i++){
-      value+=size[i]+",";
+      value+=data[i]+",";
     }
-    value+="]"
+    if (size>0) value=value.substring(0,value.length()-1)+"]";
+    else value+="]";
     return value;
   }
   public String toStringDebug(){
     String value="[";
     for (int i = 0;i<10;i++){
-      value+=size[i]+",";
+      value+=data[i]+",";
     }
-    value+="]"
+    value+="]";
     return value;
   }
   public String get(int index){
-     if (index < 0 || index >= size()) return null;
-     return data[index];
+     if (index < 0 || index >= size()) {
+       return null;}
+     else {return data[index]; }
   }
   public String set(int index, String element){
     if (index < 0 || index >= size()) return null;
+    String old=data[index];
     data[index]=element;
-    return this.toString();
+    return old;
   }
 }
