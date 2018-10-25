@@ -29,7 +29,7 @@ public class DavidDriver{
 		for (int x = 0; x < 8; x++){
 			beef.add("filler");
 		}
-		System.out.println("\n\nTesting add() while full: should return false");
+		System.out.println("\n\nTesting add() while full: should return true(after phase 2)");
 		System.out.println(beef.add("full"));
 
 		//testing clear()
