@@ -43,9 +43,13 @@ public class SuperArray{
   }
   public String get(int index){
      if (index < 0 || index >= size()) {
-       return null;}
-     else {return data[index]; }
+       return null;
+     }
+     else {
+       return data[index];
+     }
   }
+
   public String set(int index, String element){
     if (index < 0 || index >= size()) return null;
     String old=data[index];
@@ -112,9 +116,8 @@ public class SuperArray{
   }
   }
   public boolean remove(String element){
-    int index = this.indexOf(element);
-    if (index == -1) return false;
-    this.remove(index);
+    if (!this.contains(element)) return false;
+    this.remove(this.indexOf(element));
     return true;
   }
 }
