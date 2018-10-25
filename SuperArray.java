@@ -22,7 +22,7 @@ public class SuperArray{
     if (size>=data.length) resize();
     data[size]=element;
     size+=1;
-    return size<11;
+    return true;
   }
   public String toString(){
     String value="[";
