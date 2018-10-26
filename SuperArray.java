@@ -18,6 +18,9 @@ public class SuperArray{
   public boolean isEmpty(){
     return size==0;
   }
+  public int lengthy(){
+    return data.length;
+  }
   public boolean add(String element){
     if (size>=data.length) resize();
     data[size]=element;
@@ -35,10 +38,10 @@ public class SuperArray{
   }
   public String toStringDebug(){
     String value="[";
-    for (int i = 0;i<10;i++){
+    for (int i = 0;i<data.length-1;i++){
       value+=data[i]+",";
     }
-    value+="]";
+    value+=data[data.length-1]+"]";
     return value;
   }
   public String get(int index){
@@ -100,7 +103,7 @@ public class SuperArray{
     else{
     String returny= data[index];
     size-=1;
-    String[] data1=new String[size];
+    String[] data1=new String[data.length];
     for (int i=0;i<index;i++){
       data1[i]=data[i];
     }
