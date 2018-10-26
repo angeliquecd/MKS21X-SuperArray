@@ -5,8 +5,8 @@ public class SuperArray{
     data= new String[10];
     size=0;
   }
-  public SuperArray(int x){
-    data= new String[x];
+  public SuperArray(int startingCapacity){
+    data= new String[startingCapacity];
     size=0;
   }
   public void clear(){
@@ -85,20 +85,25 @@ public class SuperArray{
     return -1;
   }
   public void add(int index, String element){
-    if (index < 0 || index > size()) {System.out.println("Error");}
-    else{
+    if (index<0 || index>size) {
+      throw new indexOutofBoundsException("Error");}
+    try{
     size++;
     String[] data1=new String[size];
     for (int i=0;i<index;i++){
-      data1[i]=data[i];
-    }
+      data1[i]=data[i];}
     for (int i = index;i<size-1;i++){
       data1[i+1]=data[i];
     }
     data1[index]=element;
     data=data1;
   }
+
+  catch(indexOutofBoundsException a){
+    System.out.println("Index is out of bounds.");
+
   }
+}
   public String remove(int index){
     if (index < 0 || index > size()) return "Error";
     else{
