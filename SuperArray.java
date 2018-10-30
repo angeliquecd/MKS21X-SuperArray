@@ -6,6 +6,7 @@ public class SuperArray{
     size=0;
   }
   public SuperArray(int startingCapacity){
+    if (startingCapacity<0) throw new IllegalArgumentException("Out of bounds");
     data= new String[startingCapacity];
     size=0;
   }
