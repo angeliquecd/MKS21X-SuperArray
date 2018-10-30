@@ -37,6 +37,9 @@ public class SuperArray{
     return value;
   }
   public String toStringDebug(){
+    if (data.length==0){
+      return "[]";
+    }
     String value="[";
     for (int i = 0;i<data.length-1;i++){
       value+=data[i]+",";
@@ -60,11 +63,14 @@ public class SuperArray{
     return old;
   }
   private void resize(){
-    String[] data1= new String[size*2];
+    if (size==0) data=new String[2];
+    else{
+          String[] data1= new String[size*2];
     for (int i =0;i<size;i++){
       data1[i]=data[i];
     }
     data=data1;
+  }
   }
   public boolean contains(String target){
     for (int i =0;i<size;i++){
